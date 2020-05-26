@@ -2,7 +2,7 @@
 exports.up = function(knex) {
     return knex.schema
       .createTable('user', tbl => {
-          tbl.increments()
+          tbl.increments('id')
           tbl
               .string('username').unique().notNullable()
           tbl
@@ -14,8 +14,13 @@ exports.up = function(knex) {
           tbl
               .string('store_name').notNullable()
       })
+      .createTable('category', tbl => {
+        tbl.increments('id')
+        tbl
+            .string('type').notNullable()
+    })
       .createTable('item', tbl => {
-          tbl.increments()
+          tbl.increments('id')
           tbl
               .string('name').notNullable()
           tbl
@@ -32,11 +37,11 @@ exports.up = function(knex) {
           tbl.timestamp('created_at', { useTz: true }).defaultTo(knex.fn.now())
 
           tbl
-              .integer('user_id')
+              .integer('category_id')
               .notNullable()
               .unsigned()
               .references('id')
-              .inTable('user')
+              .inTable('category')
               .onDelete('CASCADE')
               .onUpdate('CASCADE')
       })
@@ -57,26 +62,13 @@ exports.up = function(knex) {
             .onUpdate('CASCADE')
           tbl.primary(['item_id', 'user_id'])
       })
-      .createTable('category', tbl => {
-          tbl.increments()
-          tbl
-              .string('type').notNullable()
-          tbl
-              .integer('item_id')
-              .notNullable()
-              .unsigned()
-              .references('id')
-              .inTable('item')
-              .onDelete('CASCADE')
-              .onUpdate('CASCADE')
-      })
   };
   
   exports.down = function(knex) {
     return knex.schema
-      .dropTableIfExists('category')
       .dropTableIfExists('user_item')
       .dropTableIfExists('item')
+      .dropTableIfExists('category')
       .dropTableIfExists('user')
   };
   
