@@ -17,7 +17,7 @@ exports.up = function(knex) {
       .createTable('category', tbl => {
         tbl.increments('id')
         tbl
-            .string('type').notNullable()
+            .string('type').notNullable().unique()
     })
       .createTable('item', tbl => {
           tbl.increments('id')
