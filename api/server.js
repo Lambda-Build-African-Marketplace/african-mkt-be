@@ -11,12 +11,12 @@ server.use(cors({ origin: '*' }))
 const auth = require('../auth/validate-middleware.js')
 
 const authRouter = require('../routes/auth.js')
-
-
+const itemRouter = require('../routes/item-route.js')
+const userRouter = require('../routes/user-route.js')
 
 server.use('/api/auth', authRouter)
-
-
+server.use('/api/item', itemRouter)
+server.use('/api/user', userRouter)
 
 server.get('/', (req, res) => {
     res.send('Hello! Clients!!!')
