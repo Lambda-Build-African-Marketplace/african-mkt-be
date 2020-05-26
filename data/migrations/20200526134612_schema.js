@@ -41,7 +41,6 @@ exports.up = function(knex) {
               .onUpdate('CASCADE')
       })
       .createTable('user_item', tbl => {
-          tbl.increments()
           tbl.integer('item_id')
             .notNullable()
             .unsigned()
@@ -56,7 +55,7 @@ exports.up = function(knex) {
             .inTable('user')
             .onDelete('CASCADE')
             .onUpdate('CASCADE')
-          tbl.unique(['user_id', 'item_id'])
+          tbl.primary(['item_id', 'user_id'])
       })
       .createTable('category', tbl => {
           tbl.increments()
