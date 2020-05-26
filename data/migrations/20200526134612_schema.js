@@ -38,11 +38,10 @@ exports.up = function(knex) {
 
           tbl
               .integer('category_id')
-              .notNullable()
               .unsigned()
               .references('id')
               .inTable('category')
-              .onDelete('CASCADE')
+              .onDelete('SET NULL')
               .onUpdate('CASCADE')
       })
       .createTable('user_item', tbl => {
