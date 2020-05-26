@@ -15,6 +15,8 @@ const itemRouter = require('../routes/item-route.js')
 const userRouter = require('../routes/user-route.js')
 
 server.use('/api/auth', authRouter)
+
+/*will add auth router to the routes below */
 server.use('/api/item', itemRouter)
 server.use('/api/user', userRouter)
 
