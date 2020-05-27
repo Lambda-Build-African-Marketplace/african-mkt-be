@@ -24,7 +24,7 @@ function findByFilter(filter){
 async function addUser(user) {
     const [id] = await db('user').insert(user, 'id');
 
-    return findById(id);
+    return findById(id)
 }
 
 async function updateUser(id, changes) {
@@ -32,13 +32,13 @@ async function updateUser(id, changes) {
         .where({ id })
         .update(changes)
 
-    return findById(id);
+    return findById(id)
 }
 
 function deleteUser(id) {
     return db("user")
         .where({ id })
-        .del();
+        .del()
 }
 
 async function getUserItems(id){
