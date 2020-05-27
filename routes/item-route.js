@@ -24,5 +24,20 @@ router.get('/:id', (req, res) => {
         })
 })
 
+router.post('/:user_id', (req,res) => {
+    // the id is the user_id
+    const { user_id } = req.params;
+    //Need to have FE send the user_id that does the post so that I
+    //could link the user to the *posted item*
+    Item.addItem(req.body, user_id)
+        .then((item) => {
+            res.status(201).json(item)
+        })
+        .catch(error => {
+            console.log(error)
+            res.status(500).json(error);
+        })
+})
 //Todo: middleware to validate whether an item ID existes
+//Todo: middleware to validate item body
 module.exports = router
