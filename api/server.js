@@ -10,7 +10,7 @@ server.use(cors({ origin: '*' }))
 
 const auth = require('../auth/validate-middleware.js')
 
-const authRouter = require('../routes/auth.js')
+const authRouter = require('../routes/auth-route.js')
 const itemRouter = require('../routes/item-route.js')
 const userRouter = require('../routes/user-route.js')
 
