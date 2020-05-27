@@ -14,9 +14,8 @@ async function findById(id){
     return user
 }
 
-async function findByFilter(filter){
-    const user = await db('user').where(filter)
-    return user
+function findByFilter(filter){
+    return db('user').where(filter)
 }
 
 async function addUser(user) {

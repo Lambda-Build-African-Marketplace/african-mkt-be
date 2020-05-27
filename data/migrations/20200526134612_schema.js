@@ -4,7 +4,7 @@ exports.up = function(knex) {
       .createTable('user', tbl => {
           tbl.increments('id')
           tbl
-              .string('username').unique().notNullable()
+              .string('username').unique()
           tbl
               .string('password').notNullable()
           tbl
@@ -12,7 +12,7 @@ exports.up = function(knex) {
           tbl
               .string('about')
           tbl
-              .string('store_name').notNullable()
+              .string('store_name').unique()
       })
       .createTable('category', tbl => {
         tbl.increments('id')
