@@ -10,7 +10,10 @@ module.exports = {
 }
 
 async function findById(id){
-    const user = await db('user').where({ id }).first()
+    const user = await db('user as u')
+                    .where({ id })
+                    .select('u.id', 'u.username', 'u.email', 'u.about', 'u.store_name')
+                    .first()
     return user
 }
 
