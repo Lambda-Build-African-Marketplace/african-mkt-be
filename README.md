@@ -1,4 +1,22 @@
 # african-mkt-be
 
 
- heroku run -a sauti-mkt knex migrate:latest
+
+ baseurl: `https://sauti-mkt.herokuapp.com`
+
+
+ *Get User w/their ID: baseurl/api/users/:id*
+ Notes: id is the user's id
+ 
+ If successful, recieve:
+
+  - Status Code: *200*
+  - Object of the user info
+    ```{
+    "id": 1,
+    "username": "Jane",
+    "email": "Jane@gmail.com",
+    "about": "Selling all kinds of corn, grown locally.",
+    "store_name": "Jane and the Corn Farm"
+    }
+    ```
