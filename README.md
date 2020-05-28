@@ -1,11 +1,12 @@
  # baseurl: `https://sauti-mkt.herokuapp.com`
 
 
- ## **Get User w/their ID: baseurl/api/users/:id**
- Notes              | Require a body?|
- -------------------|----------------|
- id is the user's id|No
+ ## **baseurl/api/users/:id**
+ Notes              | Description       | Require a body?|
+ -------------------|-------------------|----------------|
+ id is the user's id|Get User w/their ID|      No        |            
  
+
  If successful, recieve:
 
   - Status Code: **200**
@@ -22,9 +23,11 @@
 
 
  ## **Get user's items that they posted: baseurl/api/users/:id/items**
- Notes              | Require a body?|
- -------------------|----------------|
- id is the user's id|No
+
+  Notes              | Description                      | Require a body?|
+ --------------------|----------------------------------|----------------|
+ id is the user's id |Get user's items that they posted |      No        | 
+ 
  
  If successful, recieve:
 
