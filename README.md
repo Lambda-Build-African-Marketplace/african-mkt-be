@@ -29,7 +29,7 @@
  If successful, recieve:
 
   - Status Code: **200**
-  - Array of the user info
+  - Array of the user's items 
     ```
     [
         {
