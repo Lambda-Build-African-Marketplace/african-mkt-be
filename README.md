@@ -81,7 +81,7 @@
      ## **baseurl/api/items**
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
-                     |Get all items in the database     |         No      |      GET      |         
+        None         |Get all items in the database     |         No      |      GET      |         
  
 
 
