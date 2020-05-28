@@ -17,8 +17,8 @@ const userRouter = require('../routes/user-route.js')
 server.use('/api/auth', authRouter)
 
 /*will add auth router to the routes below */
-server.use('/api/items', itemRouter)
-server.use('/api/users', userRouter)
+server.use('/api/items', auth, itemRouter)
+server.use('/api/users', auth, userRouter)
 
 server.get('/', (req, res) => {
     res.send('Hello! Clients!!!')
