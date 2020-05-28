@@ -5,12 +5,12 @@
  baseurl: `https://sauti-mkt.herokuapp.com`
 
 
- *Get User w/their ID: baseurl/api/users/:id*
- Notes: id is the user's id
+ **Get User w/their ID: baseurl/api/users/:id**
+ |Notes: id is the user's id|
  
  If successful, recieve:
 
-  - Status Code: *200*
+  - Status Code: **200**
   - Object of the user info
     ```{
     "id": 1,
