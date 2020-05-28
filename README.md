@@ -2,10 +2,10 @@
 
 
 
- baseurl: `https://sauti-mkt.herokuapp.com`
+ #baseurl: `https://sauti-mkt.herokuapp.com`
 
 
- **Get User w/their ID: baseurl/api/users/:id**
+ ##**Get User w/their ID: baseurl/api/users/:id**
  Notes              | Require a body?|
  -------------------|----------------|
  id is the user's id|No
