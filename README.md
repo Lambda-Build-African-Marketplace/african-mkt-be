@@ -66,7 +66,7 @@
  If successful, recieve:
 
   - Status Code: **200**
-  - Object of the user info
+  - Object of the updated user's info
     ```
     {
     "id": 4,
