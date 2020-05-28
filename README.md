@@ -56,7 +56,7 @@
  
 
  *Example of Body (for user with id of 4):*
-    ```
+   - ```
     {
         "store_name": "Lambda's Lammas",
         "about": "A South African native raising llamas for making textiles"
