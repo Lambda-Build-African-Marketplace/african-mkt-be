@@ -1,10 +1,10 @@
- # baseurl: `https://sauti-mkt.herokuapp.com`
+ # Baseurl: `https://sauti-mkt.herokuapp.com`
 
 
  ## **baseurl/api/users/:id**
- Notes              | Description       | Require a body?|
- -------------------|-------------------|----------------|
- id is the user's id|Get User w/their ID|      No        |            
+ Notes              | Description       | Requires a body?| CRUD Operation |
+ -------------------|-------------------|-----------------|----------------|
+ id is the user's id|Get User w/their ID|      No         |     GET        |
  
 
  If successful, recieve:
@@ -22,13 +22,14 @@
     ```
 
 
- ## **Get user's items that they posted: baseurl/api/users/:id/items**
+ ## **baseurl/api/users/:id/items**
 
-  Notes              | Description                      | Require a body?|
- --------------------|----------------------------------|----------------|
- id is the user's id |Get user's items that they posted |      No        | 
+  Notes              | Description                      | Requires a body?| CRUD Operation |
+ --------------------|----------------------------------|-----------------|----------------|
+ id is the user's id |Get user's items that they posted |      No         |      GET       |
  
  
+
  If successful, recieve:
 
   - Status Code: **200**
@@ -46,4 +47,32 @@
             "type": "grain"
         }
     ]
+    ```
+
+ ## **baseurl/api/users/:id**
+  Notes              | Description                      | Requires a body?| CRUD Operation |
+ --------------------|----------------------------------|-----------------|----------------|
+ id is the user's id |Update any field in user table    |      Yes        |      PUT      |         
+ 
+
+ *Example of Body (for user with id of 4):*
+    ```
+    {
+        "store_name": "Lambda's Lammas",
+        "about": "A South African native raising llamas for making textiles"
+    }
+    ```
+
+ If successful, recieve:
+
+  - Status Code: **200**
+  - Object of the user info
+    ```
+    {
+    "id": 4,
+    "username": null,
+    "email": "Lambda@gmail.com",
+    "about": "A South African native raising llamas for making textiles",
+    "store_name": "Lambda's Lammas"
+    }
     ```
