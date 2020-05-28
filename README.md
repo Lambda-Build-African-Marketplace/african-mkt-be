@@ -6,7 +6,9 @@
 
 
  **Get User w/their ID: baseurl/api/users/:id**
- |Notes: id is the user's id|
+ Notes              | Require a body?|
+ -------------------|----------------|
+ id is the user's id|No
  
  If successful, recieve:
 
