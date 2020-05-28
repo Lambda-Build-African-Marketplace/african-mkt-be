@@ -1,7 +1,3 @@
-# african-mkt-be
-
-
-
  # baseurl: `https://sauti-mkt.herokuapp.com`
 
 
@@ -14,7 +10,8 @@
 
   - Status Code: **200**
   - Object of the user info
-    ```{
+    ```
+    {
     "id": 1,
     "username": "Jane",
     "email": "Jane@gmail.com",
