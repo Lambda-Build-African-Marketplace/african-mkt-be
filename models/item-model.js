@@ -39,7 +39,7 @@ async function deleteItem(id){
 }
 
 async function updateItem(id, changes){
-    await db('item').where({ id }).update(id, changes)
+    await db('item').where({ id }).update(changes)
 
     return findById(id)
 }
