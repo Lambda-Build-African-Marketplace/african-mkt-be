@@ -1,7 +1,7 @@
  # Baseurl: `https://sauti-mkt.herokuapp.com`
 
 
- ## **baseurl/api/users/:id**
+## **baseurl/api/users/:id**
  Notes              | Description       | Requires a body?| CRUD Operation |
  -------------------|-------------------|-----------------|----------------|
  id is the user's id|Get User w/their ID|      No         |     GET        |
@@ -22,7 +22,7 @@
     ```
 
 
- ## **baseurl/api/users/:id/items**
+## **baseurl/api/users/:id/items**
 
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
@@ -51,7 +51,7 @@
     ]
     ```
 
- ## **baseurl/api/users/:id**
+## **baseurl/api/users/:id**
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
  id is the user's id |Update any field in user table    |      Yes        |      PUT      |         
@@ -81,7 +81,7 @@
     ```
 
 
- ## **baseurl/api/items**
+## **baseurl/api/items**
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
  None                |Get all items in the database     |         No      |      GET       |         
@@ -118,7 +118,7 @@
     ```
 
 
- ## **baseurl/api/items/:id**
+## **baseurl/api/items/:id**
   Notes              | Description                       | Requires a body?| CRUD Operation |
  --------------------|-----------------------------------|-----------------|----------------|
  id is the item id   |Get a specific item in the database|         No      |      GET      |         
@@ -145,7 +145,7 @@
     ```
 
 
- ## **baseurl/api/categories**
+## **baseurl/api/categories**
  Notes              | Description       | Requires a body?| CRUD Operation |
  -------------------|-------------------|-----------------|----------------|
  None               |Get all categories |      No         |     GET        |
