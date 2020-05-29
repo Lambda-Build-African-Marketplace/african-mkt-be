@@ -50,6 +50,20 @@ router.delete('/:id', (req, res) => {
             res.status(500).json(error);
         })
 })
+
+
+router.put('/:id', (req, res) => {
+    const { id } = req.params;
+
+    Item.updateItem(id, req.body)
+        .then(updatedItem => {
+            res.status(200).json(updatedItem)
+        })
+        .catch(error => {
+            console.log('error in PUT id on items', error)
+            res.status(500).json(error);
+        })
+})
 //Todo: middleware to validate whether an item ID existes
 //Todo: middleware to validate item body
 module.exports = router

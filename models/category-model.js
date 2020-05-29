@@ -31,6 +31,7 @@ async function addCategory(body){
 }
 
 async function updateCategory(id, changes) {
+    console.log(changes)
     await db("category")
         .where({ id })
         .update(changes)
