@@ -131,6 +131,41 @@
     ```
 
 
+## **baseurl/api/items/:id**
+
+  Notes                   | Description                      | Requires a body?| CRUD Operation |
+ -------------------------|----------------------------------|-----------------|----------------|
+ id is the item's id      |Change to an item                 |      Yes        |      PUT       |
+ 
+ 
+
+  *Example of Body (for item with id of 4):*
+   - ```
+        {
+            "price": 25
+        }
+     ```
+
+
+ If successful, recieve:
+
+  - Status Code: **200**
+  - An object of the updated item (note the id here is the item ID)
+    ```
+    {
+        "id": 4,
+        "name": "hay",
+        "description": "Organic hay from bermuda grass",
+        "city": "Nairobi",
+        "country": "Kenya",
+        "price": 25,
+        "photo_url": "https://um-insight.net/downloads/2294/download/africa-outline-hi.png?cb=c3ae26612c9e50a57beca7f3ed64950a&w=540&h=",
+        "created_at": "2020-05-27 17:26:01",
+        "category_id": null
+    }
+    ```
+
+
 ## **baseurl/api/items**
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
