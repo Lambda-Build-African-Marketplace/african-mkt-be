@@ -78,6 +78,15 @@
     "store_name": "Lambda's Lammas"
     }
     ```
+## **baseurl/api/users/:id**
+  Notes              | Description                      | Requires a body?| CRUD Operation |
+ --------------------|----------------------------------|-----------------|----------------|
+ id is the user's id |Deletes a user                    |      No         |      DELETE    |         
+ 
+
+ If successful, recieve:
+
+  - Status Code: **204**
 
 
 ## **baseurl/api/items**
