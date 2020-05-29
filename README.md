@@ -30,6 +30,8 @@
  
  
 
+ 
+
  If successful, recieve:
 
   - Status Code: **200**
@@ -56,7 +58,8 @@
  
 
  *Example of Body (for user with id of 4):*
-   - ```
+   - 
+   ```
     {
         "store_name": "Lambda's Lammas",
         "about": "A South African native raising llamas for making textiles"
@@ -81,9 +84,7 @@
  ## **baseurl/api/items**
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
- None                |Get all items in the database     |         No      |      GET      |         
- 
-
+ None                |Get all items in the database     |         No      |      GET       |         
 
  If successful, recieve:
 
@@ -142,3 +143,28 @@
     }
 
     ```
+
+
+ ## **baseurl/api/categories**
+ Notes              | Description       | Requires a body?| CRUD Operation |
+ -------------------|-------------------|-----------------|----------------|
+ None               |Get all categories |      No         |     GET        |
+ 
+
+ If successful, recieve:
+
+  - Status Code: **200**
+  - An array of objects of the categories within the database
+    ```
+    [
+        {
+            "id": 1,
+            "type": "grain"
+        },
+        {
+            "id": 2,
+            "type": "sugar"
+        }
+    ]
+    ```
+
