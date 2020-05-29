@@ -78,7 +78,7 @@
     ```
 
 
-     ## **baseurl/api/items**
+ ## **baseurl/api/items**
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
         None         |Get all items in the database     |         No      |      GET      |         
@@ -114,4 +114,31 @@
             "category_id": 1
         }
     ]
+    ```
+
+
+ ## **baseurl/api/items/:id**
+  Notes              | Description                       | Requires a body?| CRUD Operation |
+ --------------------|-----------------------------------|-----------------|----------------|
+ id is the item id   |Get a specific item in the database|         No      |      GET      |         
+ 
+
+
+ If successful, recieve:
+
+  - Status Code: **200**
+  - Object of the item
+    ```
+    {
+    "id": 5,
+    "name": "hay",
+    "description": "Organic hay from bermuda grass",
+    "city": "Nairobi",
+    "country": "Kenya",
+    "price": 20,
+    "photo_url": "https://um-insight.net/downloads/2294/download/africa-outline-hi.png?cb=c3ae26612c9e50a57beca7f3ed64950a&w=540&h=",
+    "created_at": "2020-05-27 17:27:00",
+    "category_id": null
+    }
+
     ```
