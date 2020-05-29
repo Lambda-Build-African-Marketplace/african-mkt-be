@@ -1,7 +1,7 @@
  # Baseurl: `https://sauti-mkt.herokuapp.com`
 
 
- ## **baseurl/api/users/:id**
+## **baseurl/api/users/:id**
  Notes              | Description       | Requires a body?| CRUD Operation |
  -------------------|-------------------|-----------------|----------------|
  id is the user's id|Get User w/their ID|      No         |     GET        |
@@ -22,12 +22,14 @@
     ```
 
 
- ## **baseurl/api/users/:id/items**
+## **baseurl/api/users/:id/items**
 
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
  id is the user's id |Get user's items that they posted |      No         |      GET       |
  
+ 
+
  
 
  If successful, recieve:
@@ -49,7 +51,7 @@
     ]
     ```
 
- ## **baseurl/api/users/:id**
+## **baseurl/api/users/:id**
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
  id is the user's id |Update any field in user table    |      Yes        |      PUT      |         
@@ -57,11 +59,11 @@
 
  *Example of Body (for user with id of 4):*
    - ```
-    {
-        "store_name": "Lambda's Lammas",
-        "about": "A South African native raising llamas for making textiles"
-    }
-    ```
+        {
+            "store_name": "Lambda's Lammas",
+            "about": "A South African native raising llamas for making textiles"
+        }
+     ```
 
  If successful, recieve:
 
@@ -76,14 +78,21 @@
     "store_name": "Lambda's Lammas"
     }
     ```
-
-
- ## **baseurl/api/items**
+## **baseurl/api/users/:id**
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
-        None         |Get all items in the database     |         No      |      GET      |         
+ id is the user's id |Deletes a user                    |      No         |      DELETE    |         
  
 
+ If successful, recieve:
+
+  - Status Code: **204**
+
+
+## **baseurl/api/items**
+  Notes              | Description                      | Requires a body?| CRUD Operation |
+ --------------------|----------------------------------|-----------------|----------------|
+ None                |Get all items in the database     |         No      |      GET       |         
 
  If successful, recieve:
 
@@ -117,7 +126,7 @@
     ```
 
 
- ## **baseurl/api/items/:id**
+## **baseurl/api/items/:id**
   Notes              | Description                       | Requires a body?| CRUD Operation |
  --------------------|-----------------------------------|-----------------|----------------|
  id is the item id   |Get a specific item in the database|         No      |      GET      |         
@@ -130,15 +139,40 @@
   - Object of the item
     ```
     {
-    "id": 5,
-    "name": "hay",
-    "description": "Organic hay from bermuda grass",
-    "city": "Nairobi",
-    "country": "Kenya",
-    "price": 20,
-    "photo_url": "https://um-insight.net/downloads/2294/download/africa-outline-hi.png?cb=c3ae26612c9e50a57beca7f3ed64950a&w=540&h=",
-    "created_at": "2020-05-27 17:27:00",
-    "category_id": null
+        "id": 5,
+        "name": "hay",
+        "description": "Organic hay from bermuda grass",
+        "city": "Nairobi",
+        "country": "Kenya",
+        "price": 20,
+        "photo_url": "https://um-insight.net/downloads/2294/download/africa-outline-hi.png?cb=c3ae26612c9e50a57beca7f3ed64950a&w=540&h=",
+        "created_at": "2020-05-27 17:27:00",
+        "category_id": null
     }
 
     ```
+
+
+## **baseurl/api/categories**
+ Notes              | Description       | Requires a body?| CRUD Operation |
+ -------------------|-------------------|-----------------|----------------|
+ None               |Get all categories |      No         |     GET        |
+ 
+
+ If successful, recieve:
+
+  - Status Code: **200**
+  - An array of objects of the categories within the database
+    ```
+    [
+        {
+            "id": 1,
+            "type": "grain"
+        },
+        {
+            "id": 2,
+            "type": "sugar"
+        }
+    ]
+    ```
+
