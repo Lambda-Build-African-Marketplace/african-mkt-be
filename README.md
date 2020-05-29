@@ -89,6 +89,48 @@
   - Status Code: **204**
 
 
+
+
+
+## **baseurl/api/items/:user_id**
+
+  Notes              | Description                      | Requires a body?| CRUD Operation |
+ --------------------|----------------------------------|-----------------|----------------|
+ id is the user's id |User posts item                   |      Yes        |      POST      |
+ 
+ 
+
+  *Example of Body (for user with id of 3):*
+   - ```
+    {
+        "name":"hay",
+        "description": "Organic hay from bermuda grass",
+        "city": "Nairobi",
+        "country": "Kenya",
+        "price": 20
+    }
+     ```
+
+
+ If successful, recieve:
+
+  - Status Code: **201**
+  - An object of the updated item (note the id here is the item ID)
+    ```
+    {
+        "id": 5,
+        "name": "hay",
+        "description": "Organic hay from bermuda grass",
+        "city": "Nairobi",
+        "country": "Kenya",
+        "price": 20,
+        "photo_url": "https://um-insight.net/downloads/2294/download/africa-outline-hi.png?cb=c3ae26612c9e50a57beca7f3ed64950a&w=540&h=",
+        "created_at": "2020-05-27 17:27:00",
+        "category_id": null
+    }
+    ```
+
+
 ## **baseurl/api/items**
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
