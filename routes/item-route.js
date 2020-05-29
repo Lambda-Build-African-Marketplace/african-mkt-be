@@ -38,6 +38,18 @@ router.post('/:user_id', (req,res) => {
             res.status(500).json(error);
         })
 })
+
+router.delete('/:id', (req, res) => {
+    const { id } = req.params;
+
+    Item.deleteItem(id)
+        .then(deletedI => {
+            res.status(200).json(deletedI)
+        })
+        .catch(error => {
+            res.status(500).json(error);
+        })
+})
 //Todo: middleware to validate whether an item ID existes
 //Todo: middleware to validate item body
 module.exports = router

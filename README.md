@@ -194,6 +194,18 @@
 
     ```
 
+## **baseurl/api/items/:id**
+ Notes                  | Description          | Requires a body?| CRUD Operation |
+ -----------------------|----------------------|-----------------|----------------|
+ id is the item id      |Delete item     by id |      No         |     DELETE     |
+ 
+
+ If successful, recieve:
+
+  - Status Code: **200**
+   
+
+
 
 ## **baseurl/api/categories**
  Notes              | Description       | Requires a body?| CRUD Operation |
