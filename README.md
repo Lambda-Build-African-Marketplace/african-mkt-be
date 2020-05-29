@@ -89,6 +89,48 @@
   - Status Code: **204**
 
 
+
+
+
+## **baseurl/api/items/:user_id**
+
+  Notes                   | Description                      | Requires a body?| CRUD Operation |
+ -------------------------|----------------------------------|-----------------|----------------|
+ user_id is the user's id |User posts an item                |      Yes        |      POST      |
+ 
+ 
+
+  *Example of Body (for user with id of 3):*
+   - ```
+        {
+            "name":"hay",
+            "description": "Organic hay from bermuda grass",
+            "city": "Nairobi",
+            "country": "Kenya",
+            "price": 20
+        }
+     ```
+
+
+ If successful, recieve:
+
+  - Status Code: **201**
+  - An object of the updated item (note the id here is the item ID)
+    ```
+    {
+        "id": 5,
+        "name": "hay",
+        "description": "Organic hay from bermuda grass",
+        "city": "Nairobi",
+        "country": "Kenya",
+        "price": 20,
+        "photo_url": "https://um-insight.net/downloads/2294/download/africa-outline-hi.png?cb=c3ae26612c9e50a57beca7f3ed64950a&w=540&h=",
+        "created_at": "2020-05-27 17:27:00",
+        "category_id": null
+    }
+    ```
+
+
 ## **baseurl/api/items**
   Notes              | Description                      | Requires a body?| CRUD Operation |
  --------------------|----------------------------------|-----------------|----------------|
@@ -129,7 +171,7 @@
 ## **baseurl/api/items/:id**
   Notes              | Description                       | Requires a body?| CRUD Operation |
  --------------------|-----------------------------------|-----------------|----------------|
- id is the item id   |Get a specific item in the database|         No      |      GET      |         
+ id is the item id   |Get a specific item in the database|         No      |      GET       |         
  
 
 
@@ -175,4 +217,50 @@
         }
     ]
     ```
+
+
+## **baseurl/api/categories/:id**
+ Notes                  | Description       | Requires a body?| CRUD Operation |
+ -----------------------|-------------------|-----------------|----------------|
+ id is the category id  |Get category by id |      No         |     GET        |
+ 
+
+ If successful, recieve:
+
+  - Status Code: **200**
+  - An object of the category
+    ```
+    {
+        "id": 1,
+        "type": "grain"
+    }
+    ```
+
+## **baseurl/api/categories**
+ Notes                  | Description        | Requires a body?| CRUD Operation |
+ -----------------------|--------------------|-----------------|----------------|
+ Requires a 'type' field|Post a new category |      Yes        |     POST       |
+ 
+
+ If successful, recieve:
+
+  - Status Code: **200**
+  - An object of the new category
+    ```
+    {
+        "id": 4,
+        "type": "candy"
+    }
+    ```
+
+## **baseurl/api/categories/:id**
+ Notes                  | Description          | Requires a body?| CRUD Operation |
+ -----------------------|----------------------|-----------------|----------------|
+ id is the category id  |Delete category by id |      No         |     DELETE     |
+ 
+
+ If successful, recieve:
+
+  - Status Code: **200**
+   
 
