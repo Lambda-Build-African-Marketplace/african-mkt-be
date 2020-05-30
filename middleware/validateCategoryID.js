@@ -1,7 +1,6 @@
 const Category = require('../models/category-model.js')
-const db = require('../data/dbConfig.js')
 
-async function validateItemID (req, res, next) {
+async function validateCategoryID (req, res, next) {
     const { id } = req.params;
 
     try{
@@ -19,4 +18,4 @@ async function validateItemID (req, res, next) {
     }
 }
 
-module.exports = validateItemID
+module.exports = validateCategoryID
