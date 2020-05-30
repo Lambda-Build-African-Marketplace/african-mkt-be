@@ -1,5 +1,4 @@
 const Item = require('../models/item-model.js')
-const db = require('../data/dbConfig.js')
 
 async function validateItemID (req, res, next) {
     const { id } = req.params;

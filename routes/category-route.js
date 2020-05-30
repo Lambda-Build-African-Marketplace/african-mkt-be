@@ -1,6 +1,7 @@
 const router = require('express').Router()
 
 const Category = require('../models/category-model.js')
+const validateCategoryID = require('../middleware/validateCategoryID')
 
 router.get('/', (req,res) => {
     Category.getAllCategories()
@@ -13,7 +14,7 @@ router.get('/', (req,res) => {
         })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', validateCategoryID, (req, res) => {
     const { id } = req.params;
     Category.findById(id)
         .then(category => {
