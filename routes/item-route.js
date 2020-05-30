@@ -1,6 +1,9 @@
 const router = require('express').Router()
 
 const Item = require('../models/item-model.js')
+const validateItemID = require('../middleware/validateItemID.js')
+const validateItemBody = require('../middleware/validateItemBody.js')
+
 
 router.get('/', (req, res) => {
     Item.getAllItems()
@@ -12,7 +15,7 @@ router.get('/', (req, res) => {
         })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', validateItemID, (req, res)=> {
     const { id } = req.params;
 
     Item.findById(id)
@@ -24,7 +27,7 @@ router.get('/:id', (req, res) => {
         })
 })
 
-router.post('/:user_id', (req,res) => {
+router.post('/:user_id', validateItemBody, (req,res) => {
     // the id is the user_id
     const { user_id } = req.params;
     //Need to have FE send the user_id that does the post so that I
@@ -64,6 +67,8 @@ router.put('/:id', (req, res) => {
             res.status(500).json(error);
         })
 })
-//Todo: middleware to validate whether an item ID existes
+
+
+//Todo: middleware to validate whether an item ID existes [x]
 //Todo: middleware to validate item body
 module.exports = router

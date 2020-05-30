@@ -27,9 +27,9 @@ function findByFilter(filter){
 
 async function addItem(body, user_id) {
     const [id] = await db('item').insert(body, 'id'); //id = item_id
-    const joinTable = await db('user_item').insert({user_id, item_id:id})
+    const updateUserItemTable = await db('user_item').insert({user_id, item_id:id})
 
-    console.log("JOIN TABLE IN ADDITEM", joinTable)
+    console.log("JOIN TABLE IN ADDITEM", updateUserItemTable)
 
     return findById(id);
 }
