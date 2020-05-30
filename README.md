@@ -107,7 +107,8 @@
             "description": "Organic hay from bermuda grass",
             "city": "Nairobi",
             "country": "Kenya",
-            "price": 20
+            "price": 20,
+            "category_id": 3
         }
      ```
 
@@ -126,7 +127,7 @@
         "price": 20,
         "photo_url": "https://um-insight.net/downloads/2294/download/africa-outline-hi.png?cb=c3ae26612c9e50a57beca7f3ed64950a&w=540&h=",
         "created_at": "2020-05-27 17:27:00",
-        "category_id": null
+        "category_id": pasture
     }
     ```
 
