@@ -37,7 +37,7 @@ router.post('/', (req,res) => {
         })
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', validateCategoryID, (req, res) => {
     const { id } = req.params;
     Category.deleteCategory(id)
         .then(deleted => {
