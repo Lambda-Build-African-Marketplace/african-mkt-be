@@ -42,7 +42,7 @@ router.post('/:user_id', validateItemBody, (req,res) => {
         })
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', validateItemID, (req, res) => {
     const { id } = req.params;
 
     Item.deleteItem(id)
@@ -55,7 +55,7 @@ router.delete('/:id', (req, res) => {
 })
 
 
-router.put('/:id', (req, res) => {
+router.put('/:id', validateItemID, (req, res) => {
     const { id } = req.params;
 
     Item.updateItem(id, req.body)
@@ -70,5 +70,5 @@ router.put('/:id', (req, res) => {
 
 
 //Todo: middleware to validate whether an item ID existes [x]
-//Todo: middleware to validate item body
+//Todo: middleware to validate item body [x]
 module.exports = router
