@@ -7,16 +7,12 @@ jest.mock('../auth/validate-middleware.js', () => {
         next()
     }
 })
-const Category = require('../models/category-model.js')
-const Users = require('../models/user-model.js')
-const Items = require('../models/item-model.js')
-
 
 describe('Item', () => {
     beforeEach(async () => {
-        await db('category').truncate()
-        await db('user').truncate()
-
+        // await db('category').truncate()
+        // await db('user').truncate()
+       
         //seeds
         await db.seed.run()
     })
@@ -71,17 +67,87 @@ describe('Item', () => {
             }
 
             const itemPost = {
-                "price": 10
+                price: 10
             }
             const newUser = await request(server).post("/api/auth/register").send(userPost)
             // console.log('NEW USER', newUser)
             const response =  await request(server).post(`/api/items/${newUser.body.newUser.id}`).send(itemPost)
-            console.log('POST for user_id RESPONSE', response)
+            // console.log('POST for user_id RESPONSE', response)
             expect(response.body.error).toBe( "need a name for a new item")
         })
 
-        // it('should require price', async () => {
+        it('should require price', async () => {
 
-        // })
+            const userPost = {
+                email: 'e@gmail.com',
+                password: '123'
+            }
+
+            const itemPost = {
+                name: "Organic candy"
+            }
+            const newUser = await request(server).post("/api/auth/register").send(userPost)
+            // console.log('NEW USER', newUser)
+            const response =  await request(server).post(`/api/items/${newUser.body.newUser.id}`).send(itemPost)
+            // console.log('POST for user_id RESPONSE', response)
+            expect(response.body.error).toBe("need a price for a new item!")
+        })
     })
+
+   describe('PUT api/items/:id', () => {
+        it('returns a 200 if successful', async () => {
+            const userPost = {
+                email: 'e@gmail.com',
+                password: '123'
+            }
+
+            const itemPost = {
+                name: "candy",
+                price: 5 
+            }
+
+            const itemPut = {
+                name: "80% dark chocolate"
+            }
+
+            const newUser = await request(server).post("/api/auth/register").send(userPost)
+            // console.log('NEW USER', newUser)
+            const newPost =  await request(server).post(`/api/items/${newUser.body.newUser.id}`).send(itemPost)
+            // console.log('POST for user_id RESPONSE', newPost)
+            const response = await request(server).put(`/api/items/3`).send(itemPut)
+            expect(response.statusCode).toBe(200)
+        })
+
+
+        it('returns updated item if successful', async () => {
+            const userPost = {
+                email: 'e@gmail.com',
+                password: '123'
+            }
+
+            const itemPost = {
+                name: "candy",
+                price: 5 
+            }
+
+            const itemPut = {
+                name: "80% dark chocolate"
+            }
+
+            const newUser = await request(server).post("/api/auth/register").send(userPost)
+            // console.log('NEW USER', newUser)
+            const newPost =  await request(server).post(`/api/items/${newUser.body.newUser.id}`).send(itemPost)
+            // console.log('POST for user_id RESPONSE', newPost)
+            const response = await request(server).put(`/api/items/3`).send(itemPut)
+            expect(response.body.name).toBe(`${itemPut.name}`)
+        })
+   })
+
+   describe('DELETE api/items/:id', () => {
+       it('returns 200 if successful', async () => {
+            const response = await request(server).delete("/api/items/2")
+
+            expect(response.statusCode).toBe(200)
+       })
+   })
 })

@@ -1,9 +1,10 @@
 const router = require('express').Router()
 const User = require('../models/user-model.js')
 
-//need to add middleware to validate user id
+//need to add middleware to validate user id [x]
+const validateUserID = require('../middleware/validateUserID.js')
 
-router.get('/:id/items', (req,res) => {
+router.get('/:id/items', validateUserID, (req,res) => {
     const { id } = req.params;
 
     User.getUserItems(id)
@@ -15,7 +16,7 @@ router.get('/:id/items', (req,res) => {
         })
 })
 
-router.get('/:id', (req,res) => {
+router.get('/:id', validateUserID, (req,res) => {
     const { id } = req.params;
 
     User.findById(id)
@@ -27,7 +28,7 @@ router.get('/:id', (req,res) => {
         })
 })
 
-router.put('/:id', (req,res) => {
+router.put('/:id', validateUserID, (req,res) => {
     const { id } = req.params;
 
     User.updateUser(id, req.body)
@@ -39,7 +40,7 @@ router.put('/:id', (req,res) => {
         })
 })
 
-router.delete('/:id', (req,res) =>{
+router.delete('/:id', validateUserID, (req,res) =>{
     const { id } = req.params;
 
     User.deleteUser(id)
