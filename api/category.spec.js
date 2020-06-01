@@ -7,8 +7,6 @@ jest.mock('../auth/validate-middleware.js', () => {
         next()
     }
 })
-const Category = require('../models/category-model.js')
-const Users = require('../models/user-model.js')
 
 describe('category', () => {
     beforeEach(async () => {
